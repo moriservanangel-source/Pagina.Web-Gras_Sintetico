@@ -340,21 +340,12 @@ textarea:focus-visible {
         );
 }
 
-/* Fondo provisional para fulbito */
+/* Fondo definitivo para fulbito */
 .court-image-fulbito {
-    background:
-        linear-gradient(
-            0deg,
-            rgb(17 24 39 / 75%),
-            transparent 75%
-        ),
-        repeating-linear-gradient(
-            90deg,
-            #166534 0,
-            #166534 45px,
-            #15803d 45px,
-            #15803d 90px
-        );
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 /* Etiqueta del deporte */
