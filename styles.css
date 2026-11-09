@@ -3,60 +3,86 @@
    1. RESET Y CONFIGURACIÓN GENERAL
    ========================================= */
 
-/* Evita que el padding y el borde alteren
-   el tamaño calculado de los elementos. */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Variables globales de colores y diseño */
+
+/* =========================================
+   PALETA DE COLORES FORTALEZA CLUB
+   ========================================= */
+
 :root {
+
+    /* VERDES ORIGINALES */
     --color-green: #16a34a;
     --color-green-dark: #14532d;
     --color-green-light: #dcfce7;
 
-    --color-dark: #111827;
-    --color-gray: #4b5563;
-    --color-gray-light: #f3f4f6;
-    --color-white: #ffffff;
+    /* COLORES GENERALES */
+    --color-dark: #102A43;
+    --color-gray: #40596D;
+    --color-gray-light: #D7EAF5;
+    --color-white: #F4FAFE;
 
-    --color-accent: #facc15;
-    --color-border: #e5e7eb;
+    /* COLOR DE ACENTO */
+    --color-accent: #FACC15;
 
+    /* AZULES COMPLEMENTARIOS */
+    --color-blue: #0877B9;
+    --color-blue-light: #38BDF8;
+    --color-blue-dark: #0B2942;
+    --color-blue-pale: #E1F3FC;
+
+    /* BORDES */
+    --color-border: #B9D8E9;
+
+    /* CONFIGURACIÓN */
     --container-width: 1120px;
     --border-radius: 16px;
     --transition: 0.3s ease;
 }
 
-/* Desplazamiento suave al navegar por anclas */
+
+/* DESPLAZAMIENTO SUAVE */
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
 }
 
-/* Estilos base del documento */
+
+/* ESTILOS GENERALES */
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--color-dark);
-    background-color: var(--color-white);
+    background-color: #EAF5FB;
     line-height: 1.6;
 }
 
-/* Las imágenes no deben desbordar su contenedor */
+
+/* IMÁGENES */
+
 img {
     display: block;
+    width: 100%;
     max-width: 100%;
 }
 
-/* Los enlaces heredan el estilo del diseño */
+
+/* ENLACES */
+
 a {
     color: inherit;
     text-decoration: none;
 }
 
-/* Los controles de formulario heredan la tipografía */
+
+/* CONTROLES */
+
 button,
 input,
 select,
@@ -64,13 +90,17 @@ textarea {
     font: inherit;
 }
 
-/* Ancho máximo común para centrar el contenido */
+
+/* CONTENEDOR GENERAL */
+
 .container {
     width: min(90%, var(--container-width));
     margin-inline: auto;
 }
 
-/* Espaciado vertical reutilizable */
+
+/* ESPACIADO DE SECCIONES */
+
 .section-padding {
     padding-block: 90px;
 }
@@ -85,10 +115,10 @@ textarea {
     top: 0;
     z-index: 10;
 
-    background-color: var(--color-dark);
+    background-color: var(--color-blue-dark);
     color: var(--color-white);
 
-    border-bottom: 3px solid var(--color-green);
+    border-bottom: 4px solid var(--color-green);
 }
 
 .header-content {
@@ -97,10 +127,13 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 24px;
 }
 
-/* Identidad visual del complejo */
+
+/* LOGOTIPO */
+
 .logo {
     font-size: 1.35rem;
     font-weight: 800;
@@ -112,7 +145,9 @@ textarea {
     color: var(--color-green);
 }
 
-/* Lista horizontal de navegación */
+
+/* NAVEGACIÓN */
+
 .nav-list {
     display: flex;
     align-items: center;
@@ -121,7 +156,7 @@ textarea {
 }
 
 .nav-list a {
-    color: #d1d5db;
+    color: #D5EAF6;
     font-size: 0.95rem;
     transition: color var(--transition);
 }
@@ -141,6 +176,7 @@ textarea {
     justify-content: center;
 
     padding: 13px 24px;
+
     border: 2px solid var(--color-accent);
     border-radius: 8px;
 
@@ -151,6 +187,7 @@ textarea {
     text-align: center;
 
     cursor: pointer;
+
     transition:
         background-color var(--transition),
         color var(--transition),
@@ -161,8 +198,10 @@ textarea {
 .button:hover {
     background-color: transparent;
     color: var(--color-accent);
+
     transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgb(0 0 0 / 15%);
+
+    box-shadow: 0 8px 18px rgb(0 0 0 / 18%);
 }
 
 .button:focus-visible,
@@ -192,33 +231,33 @@ textarea:focus-visible {
 
     color: var(--color-white);
 
-    /* Fondo deportivo con degradado.
-       Puede reemplazarse por una fotografía real. */
     background:
         linear-gradient(
             90deg,
-            rgb(17 24 39 / 95%) 0%,
-            rgb(20 83 45 / 82%) 60%,
-            rgb(17 24 39 / 55%) 100%
+            rgb(11 41 66 / 92%) 0%,
+            rgb(11 41 66 / 65%) 50%,
+            rgb(11 41 66 / 20%) 100%
         ),
-        repeating-linear-gradient(
-            135deg,
-            #14532d 0,
-            #14532d 30px,
-            #166534 30px,
-            #166534 60px
-        );
+        url("Inicio.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-content {
     padding-block: 80px;
 }
 
+
+/* ETIQUETAS */
+
 .hero-label,
 .section-label {
     margin-bottom: 14px;
 
     color: var(--color-green);
+
     font-size: 0.8rem;
     font-weight: 800;
     letter-spacing: 2px;
@@ -228,10 +267,14 @@ textarea:focus-visible {
     color: var(--color-accent);
 }
 
+
+/* TÍTULO PRINCIPAL */
+
 .hero h1 {
     margin-bottom: 22px;
 
     font-size: clamp(2.5rem, 6vw, 4.5rem);
+
     line-height: 1.1;
     letter-spacing: -1.5px;
 }
@@ -240,11 +283,14 @@ textarea:focus-visible {
     color: var(--color-accent);
 }
 
+
+/* DESCRIPCIÓN */
+
 .hero-description {
     max-width: 580px;
     margin-bottom: 30px;
 
-    color: #e5e7eb;
+    color: #E5F4FC;
     font-size: 1.08rem;
 }
 
@@ -278,81 +324,69 @@ textarea:focus-visible {
    ========================================= */
 
 .courts {
-    background-color: var(--color-gray-light);
+    background: linear-gradient(
+        135deg,
+        #D9EDF8,
+        #C5E3F2
+    );
 }
 
-/* Grid adaptable para organizar las tarjetas */
+
+/* DISTRIBUCIÓN */
+
 .courts-grid {
     display: grid;
 
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
     gap: 30px;
 }
 
-/* Componente individual de cada cancha */
+
+/* TARJETAS */
+
 .court-card {
     overflow: hidden;
 
-    background-color: var(--color-white);
+    background-color: #F8FCFF;
+
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
 
-    box-shadow: 0 5px 18px rgb(17 24 39 / 5%);
+    box-shadow: 0 6px 20px rgb(16 42 67 / 10%);
 
     transition:
         transform var(--transition),
         box-shadow var(--transition);
 }
 
-/* Efecto al pasar el cursor por la tarjeta */
+
+/* EFECTO HOVER */
+
 .court-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 32px rgb(17 24 39 / 12%);
+    transform: translateY(-7px);
+
+    box-shadow: 0 18px 35px rgb(16 42 67 / 16%);
 }
 
-/* Área visual que funciona como placeholder de imagen */
-.court-image {
-    min-height: 240px;
-    position: relative;
 
-    display: flex;
-    align-items: flex-end;
+/* IMÁGENES */
 
-    padding: 24px;
-
-    background-position: center;
-    background-size: cover;
-}
-
-/* Fondo provisional para vóley */
-.court-image-volley {
-    background:
-        linear-gradient(
-            0deg,
-            rgb(17 24 39 / 75%),
-            transparent 75%
-        ),
-        linear-gradient(
-            135deg,
-            #166534,
-            #22c55e 50%,
-            #0f766e
-        );
-}
-
-/* Fondo definitivo para fulbito */
-.court-image-fulbito {
+.court-card > div:first-child img {
     width: 100%;
-    height: 100%;
+    height: 240px;
+
     object-fit: cover;
-    display: block;
 }
 
-/* Etiqueta del deporte */
+
+/* ETIQUETA DEL DEPORTE */
+
 .court-category {
     display: inline-block;
 
     padding: 7px 14px;
+
     border-radius: 6px;
 
     background-color: var(--color-accent);
@@ -363,7 +397,9 @@ textarea:focus-visible {
     letter-spacing: 1px;
 }
 
-/* Contenido interior de cada tarjeta */
+
+/* CONTENIDO */
+
 .court-content {
     padding: 28px;
 }
@@ -372,6 +408,7 @@ textarea:focus-visible {
     margin-bottom: 8px;
 
     color: var(--color-green);
+
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 1px;
@@ -387,7 +424,9 @@ textarea:focus-visible {
     color: var(--color-gray);
 }
 
-/* Lista de características */
+
+/* CARACTERÍSTICAS */
+
 .court-features {
     display: grid;
     gap: 8px;
@@ -403,14 +442,18 @@ textarea:focus-visible {
     color: var(--color-green);
 }
 
-/* Precio y botón en la parte inferior */
+
+/* PRECIO Y BOTÓN */
+
 .court-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 16px;
 
     padding-top: 20px;
+
     border-top: 1px solid var(--color-border);
 }
 
@@ -421,8 +464,11 @@ textarea:focus-visible {
 
 .court-price p {
     color: var(--color-green-dark);
-    font-size: 1.65rem;
-    font-weight: 800;
+
+    font-size: 1.15rem;
+    font-weight: 700;
+
+    line-height: 1.4;
 }
 
 .button-book {
@@ -438,9 +484,14 @@ textarea:focus-visible {
     display: grid;
 
     grid-template-columns: 1fr 1fr;
+
     align-items: start;
+
     gap: 60px;
 }
+
+
+/* INFORMACIÓN */
 
 .contact-info > p:not(.section-label) {
     margin-bottom: 20px;
@@ -453,21 +504,36 @@ textarea:focus-visible {
 
 .contact-detail a {
     color: var(--color-green-dark);
+
     text-decoration: underline;
     text-underline-offset: 3px;
 }
 
-/* Panel del formulario */
+
+/* FORMULARIO */
+
 .contact-form {
     display: grid;
     gap: 20px;
 
     padding: 30px;
 
-    background-color: var(--color-gray-light);
-    border: 1px solid var(--color-border);
+    background: linear-gradient(
+        145deg,
+        #BFE7F8,
+        #D9F0FA,
+        #B3DDF1
+    );
+
+    border: 1px solid #91CBE6;
+
     border-radius: var(--border-radius);
+
+    box-shadow: 0 10px 28px rgb(16 42 67 / 12%);
 }
+
+
+/* GRUPOS */
 
 .form-group {
     display: grid;
@@ -475,9 +541,14 @@ textarea:focus-visible {
 }
 
 .form-group label {
+    color: var(--color-dark);
+
     font-size: 0.92rem;
     font-weight: 700;
 }
+
+
+/* CAMPOS */
 
 .form-group input,
 .form-group select,
@@ -487,25 +558,67 @@ textarea:focus-visible {
 
     padding: 12px 14px;
 
-    background-color: var(--color-white);
-    border: 1px solid #d1d5db;
+    background-color: #F4FAFE;
+
+    border: 1px solid #8DBDD5;
     border-radius: 7px;
 
     color: var(--color-dark);
+
+    transition:
+        border-color var(--transition),
+        background-color var(--transition),
+        box-shadow var(--transition);
 }
 
-.form-group textarea {
-    resize: vertical;
-}
+
+/* EFECTO FOCUS */
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     border-color: var(--color-green);
+
+    background-color: #FFFFFF;
+
+    box-shadow: 0 0 0 3px rgb(22 163 74 / 12%);
+
+    outline: none;
 }
+
+
+/* ÁREA DE MENSAJE */
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* BOTÓN ENVIAR */
 
 .button-submit {
     width: 100%;
+}
+
+
+/* MENSAJE DE CONFIRMACIÓN */
+
+.form-message {
+    padding: 12px;
+
+    border-radius: 7px;
+
+    background-color: var(--color-green-light);
+    color: var(--color-green-dark);
+
+    border: 1px solid #86D6A1;
+
+    font-weight: 700;
+    text-align: center;
+}
+
+.form-message:empty {
+    display: none;
 }
 
 
@@ -516,19 +629,24 @@ textarea:focus-visible {
 .footer {
     padding-block: 28px;
 
-    background-color: var(--color-dark);
+    background-color: var(--color-blue-dark);
     color: var(--color-white);
+
+    border-top: 3px solid var(--color-green);
 }
 
 .footer-content {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
+
     gap: 20px;
 }
 
 .footer-content > p {
-    color: #d1d5db;
+    color: #C6DFED;
+
     font-size: 0.85rem;
     text-align: center;
 }
@@ -569,6 +687,7 @@ textarea:focus-visible {
     .contact-content {
         gap: 35px;
     }
+
 }
 
 
@@ -582,7 +701,8 @@ textarea:focus-visible {
         padding-block: 60px;
     }
 
-    /* La navegación pasa a varias filas si hace falta */
+    /* ENCABEZADO */
+
     .header-content {
         justify-content: center;
         gap: 15px;
@@ -608,6 +728,8 @@ textarea:focus-visible {
         font-size: 0.82rem;
     }
 
+    /* HERO */
+
     .hero {
         min-height: 460px;
     }
@@ -620,14 +742,17 @@ textarea:focus-visible {
         font-size: clamp(2.3rem, 10vw, 3.3rem);
     }
 
-    /* Una tarjeta debajo de la otra */
+    /* CANCHAS */
+
     .courts-grid {
         grid-template-columns: 1fr;
     }
 
-    .court-image {
-        min-height: 210px;
+    .court-card > div:first-child img {
+        height: 210px;
     }
+
+    /* CONTACTO */
 
     .contact-content {
         grid-template-columns: 1fr;
@@ -638,11 +763,13 @@ textarea:focus-visible {
         padding: 22px;
     }
 
-    /* El pie de página se organiza verticalmente */
+    /* PIE DE PÁGINA */
+
     .footer-content {
         flex-direction: column;
         text-align: center;
     }
+
 }
 
 
@@ -663,4 +790,5 @@ textarea:focus-visible {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
     }
+
 }
